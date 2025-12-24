@@ -90,6 +90,5 @@ If you like this and want to contribute, well sweet. Just slap up a pr.
 ### to-do & desires
 
  - Moar Tests
- - Typescript
  - Handle shutdown in some fashion
  - More formats

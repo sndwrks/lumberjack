@@ -1,0 +1,18 @@
+.
+|____LICENSE
+|____types.d.ts
+|____index.js
+|____README.md
+|____dev.js
+|____.gitignore
+|____package-lock.json
+|____package.json
+|____.eslintignore
+|____tree.txt
+|____.eslintrc.json
+|____src
+| |____logger.js
+| |____logCache.test.js
+| |____logger.test.js
+| |____lokiCloudTransport.js
+| |____logCache.js

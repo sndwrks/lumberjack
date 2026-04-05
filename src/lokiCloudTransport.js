@@ -1,5 +1,4 @@
 import Transport from 'winston-transport';
-import { inspect } from 'util';
 
 import { logCacheEmitter } from './logCache.js';
 
@@ -26,14 +25,8 @@ class LokiCloudTransport extends Transport {
       this.emit('logged', info);
     });
 
-    const {
-      service,
-      level,
-      message,
-      splat,
-      timestamp,
-      label,
-    } = info;
+    const { service, level, timestamp, label } = info;
+    const logLine = info[Symbol.for('message')] || JSON.stringify(info);
 
     const url = 'https://logs-prod3.grafana.net/loki/api/v1/push';
 
@@ -50,7 +43,7 @@ class LokiCloudTransport extends Transport {
         label,
       },
       values: [
-        [`${tsUnixNs}`, splat ? `${inspect(message, { depth: null })}}-${splat}` : `${inspect(message, { depth: null })}`],
+        [`${tsUnixNs}`, logLine],
       ],
     };
 

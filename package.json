@@ -1,6 +1,6 @@
 {
   "name": "@sndwrks/lumberjack",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "logger powered by winston with a loki integration",
   "main": "index.js",
   "type": "module",
